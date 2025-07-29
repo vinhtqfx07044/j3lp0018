@@ -12,9 +12,14 @@
         <div class="container">
             <div class="blog-title">About Me</div>
             <div class="about-me-content">
-                <img th:src=" @{'/images/' + ${aboutMe.imagePath}}" alt="About Me Image" class="about-me-image">
-                <p th:text="${aboutMe.content}">About Me content...</p>
-                <p>Author: <span th:text="${aboutMe.author}"></span></p>
+                <div class="about-me-image-section">
+                    <img th:src=" @{'/images/' + ${aboutMe.imagePath}}" alt="About Me Image" class="about-me-image">
+                </div>
+                <div class="about-me-text-section">
+                    <p><strong>Name:</strong> <span th:text="${aboutMe.author}"></span></p>
+                    <p><strong>Age:</strong> 25</p>
+                    <p th:utext="${aboutMe.content}">About Me content...</p>
+                </div>
             </div>
         </div>
         <div th:replace="~{fragments/side-banner :: side-banner}"></div>

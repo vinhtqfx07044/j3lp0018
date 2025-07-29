@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Contact Me</title>
     <link rel="stylesheet" th:href=" @{/css/style.css}">
+    <script th:src="@{/js/contact.js}"></script>
 </head>
 <body>
 <div th:replace="~{fragments/header :: header(activePage='contact')}"></div>
@@ -11,8 +12,8 @@
 <div class="page-content">
     <div class="container">
         <div class="blog-title">Contact me</div>
-        <p>Send your message</p>
-        <hr/>
+        <p class="send-message-title">Send your message</p>
+        <hr class="contact-separator"/>
         <!-- Success Message -->
         <div th:if="${successMessage}" class="alert-success" th:text="${successMessage}">
             Thank you for your message.

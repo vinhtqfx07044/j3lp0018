@@ -84,6 +84,7 @@ ul {
 .blog-title {
     font-size: xx-large;
     font-family: 'Great Vibes', cursive;
+    margin-top: 1rem;
     margin-bottom: 1rem;
 }
 
@@ -258,6 +259,17 @@ ul {
 
 
 /* Contact form */
+.send-message-title {
+    font-size: 1.3em;
+    margin-bottom: 1rem;
+}
+
+.contact-separator {
+    border: none;
+    border-top: 3px dotted rgba(0, 0, 0, 0.2);
+    margin: 1.5rem 0 1rem 0;
+}
+
 .alert-success {
     background-color: #dff0d8;
     border: 1px solid #d6e9c6;
@@ -288,6 +300,8 @@ form input[type="text"], form input[type="email"], form textarea {
     border-radius: 6px;
     padding: 8px 12px;
     margin-bottom: 10px;
+    font-family: inherit;
+    font-size: inherit;
 }
 
 form textarea {
@@ -314,6 +328,19 @@ form textarea {
 .send-button.disable, .send-button:disabled {
     cursor: not-allowed;
     background-color: #DE6269;
+}
+
+/* Disabled form elements styling */
+form input[type="text"]:disabled, form input[type="email"]:disabled, form textarea:disabled {
+    background-color: #f5f5f5;
+    color: #666;
+    cursor: not-allowed;
+}
+
+form input[type="text"].disable, form input[type="email"].disable, form textarea.disable {
+    background-color: #f5f5f5;
+    color: #666;
+    cursor: not-allowed;
 }
 
 
@@ -349,6 +376,35 @@ footer {
     background-color: #f0f0f0;
     color: #333;
     border: 1px solid #ccc;
+}
+
+/* About Me Styles */
+.about-me-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+}
+
+.about-me-image-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-me-text-section {
+    flex: 1;
+    max-width: 50%;
+}
+
+.about-me-image {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.about-me-text-section p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
 }
 
 /* Error Pages */
