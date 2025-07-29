@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Overview - My Blog</title>
+    <link rel="stylesheet" th:href=" @{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header(activePage='blog')}"></div>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="blog-title">Overview - Blog</div>
+            <div th:if="${groupedPosts != null and not #maps.isEmpty(groupedPosts)}" class="overview-container">
+                <!-- Outer loop for each month-year group -->
+                <div th:each="group : ${groupedPosts}">
+                    <div class="overview-group overview-base flex-between">
+                        <span th:text="${group.key}">AUGUST 2014</span>
+                        <span>Date</span>
+                    </div>
+                    <!-- Inner loop for each post within the group -->
+                    <div th:each="post : ${group.value}" class="overview-item overview-base flex-between">
+                        <a th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post Title</a>
+                        <div class="overview-item-likes">
+                            <img th:src=" @{/images/like.png}" alt="Likes"/>
+                            <span th:text="${post.numLikes}">0</span>
+                        </div>
+                        <div class="overview-item-comments">
+                            <img th:src=" @{/images/comment.png}" alt="Comments"/>
+                            <span th:text="${post.numComments}">0</span>
+                        </div>
+                        <span th:text="${#temporals.format(post.createdAt, 'dd-MM-yyyy')}">17-08-2014</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div th:replace="~{fragments/side-banner :: side-banner}"></div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>

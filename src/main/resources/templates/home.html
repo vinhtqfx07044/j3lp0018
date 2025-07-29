@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home - My Fashion Blog</title>
+    <link rel="stylesheet" th:href=" @{/css/style.css}">
+</head>
+<body>
+    <div th:replace="~{fragments/header :: header(activePage='blog')}"></div>
+
+    <div class="page-content">
+        <div class="container">
+            <div class="blog-title">Blog</div>
+            <!-- Loop through posts -->
+            <div th:each="post : ${posts}" class="row">
+                <img th:src=" @{'/images/' + ${post.type} + '.png'}" th:alt="${post.type} + ' icon'">
+                <div class="post">
+                    <div class="post-title">
+                        <a class="post-title-link" th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post Title</a>
+                        <div class="post-date" th:text="${#temporals.format(post.createdAt, 'dd-MM-yyyy')}">17-08-2014</div>
+                    </div>
+                    <div class="post-content">
+                        <a class="post-content-link" th:href=" @{/post/{id}(id=${post.id})}">
+                            <img class="post-image" th:src=" @{'/images/' + ${post.imagePath}}" alt="post photo">
+                        </a>
+                        <p th:text="${post.content}">Blog post content...</p>
+                    </div>
+                </div>
+            </div>
+            <a class="overview" th:href=" @{/overview}">Overview</a>
+        </div>
+        <div th:replace="~{fragments/side-banner :: side-banner}"></div>
+    </div>
+
+    <div th:replace="~{fragments/footer :: footer}"></div>
+</body>
+</html>
