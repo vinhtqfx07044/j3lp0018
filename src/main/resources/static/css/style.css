@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
 /* Global Styles */
 html {
     background-color: white;
@@ -6,7 +8,7 @@ html {
 }
 
 body {
-    max-width: 1000px;
+    width: 1000px;
     margin: 0 auto 4rem;
     background-color: #fff;
     border-radius: 0 0 15px 15px;
@@ -15,21 +17,24 @@ body {
 
 h1 {
     font-size: 47px;
-    margin: 0 0 0.5rem 0;
-    font-family: 'Great Vibes', cursive; /* You might need to import this font */
+    margin: 0;
+    margin-left: 0.5rem;
+    font-family: 'Great Vibes', cursive;
     font-weight: lighter;
 }
 
 h2 {
     font-size: larger;
-    margin-left: 0.5rem;
+    margin: 0 0 0.5rem 0.5rem;
     font-weight: lighter;
     color: #CD0D18;
 }
 
 /* Header Styles */
 header {
-    padding: 20px;
+    padding: 15px 20px 0 20px;
+    background-color: white;
+    margin: 0;
 }
 
 header li {
@@ -44,9 +49,14 @@ header a {
 
 .nav {
     list-style: none;
-    padding: 0 0.5rem;
+    padding: 0.2rem 1.5rem;
     background-color: #CD0D18;
-    margin-top: 2rem;
+    margin: 2rem -20px 0 -20px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
 }
 
 .nav li {
@@ -64,10 +74,11 @@ header a {
     padding: 1rem;
     display: grid;
     grid-template-columns: 75% 25%;
+    margin-top: 0;
 }
 
 .container {
-    margin-right: 1rem;
+    margin-right: 2rem;
 }
 
 .blog-title {
@@ -84,17 +95,18 @@ header a {
 .banner-title {
     font-size: larger;
     margin-bottom: 0.5rem;
+    font-weight: normal;
 }
 
 .side-container {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
     border-radius: 10px;
     box-shadow: 0 0 10px #6d5160;
 }
 
 .side-container a {
     color: black;
-    text-decoration: none;
+    text-decoration: underline;
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
@@ -151,6 +163,13 @@ header a {
     margin: 0 1rem 0.5rem 0;
 }
 
+.photo-post-link {
+    display: block;
+    float: none;
+    width: 100%;
+    margin: 0;
+}
+
 .post-image {
     width: 100%;
     border-radius: 15px;
@@ -168,17 +187,42 @@ header a {
     width: 100%;
     color: black;
     padding: 0.75rem 0.5rem;
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.overview-base > span:last-child {
+    text-align: left;
+}
+
+.flex-between {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
 }
 
 .overview-group {
-    font-weight: bold;
-    font-size: 20px;
+    font-weight: normal;
+    font-size: 16px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    gap: 10px;
+}
+
+.overview-group span:first-child {
+    text-align: left;
+}
+
+.overview-group span:last-child {
+    text-align: right;
 }
 
 .overview-item {
@@ -189,17 +233,23 @@ header a {
     color: black;
     text-decoration: underline;
     font-weight: normal;
+    text-align: left;
+}
+
+.overview-item > span:last-child {
+    text-align: right;
 }
 
 .overview-item-likes, .overview-item-comments {
     display: flex;
     align-items: center;
+    justify-content: flex-start;
+    gap: 5px;
 }
 
 .overview-item img {
     width: 16px;
     height: 16px;
-    margin-right: 5px;
 }
 
 .overview-container {
@@ -281,6 +331,11 @@ footer {
 
 .footer-page-credit {
     margin: 0;
+}
+
+.footer-page-credit a {
+    color: black;
+    text-decoration: underline;
 }
 
 .footer-page-counter-item {

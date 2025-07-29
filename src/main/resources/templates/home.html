@@ -20,7 +20,7 @@
                         <div class="post-date" th:text="${#temporals.format(post.createdAt, 'dd-MM-yyyy')}">17-08-2014</div>
                     </div>
                     <div class="post-content">
-                        <a class="post-content-link" th:href=" @{/post/{id}(id=${post.id})}">
+                        <a th:class="${post.type == 'photo'} ? 'photo-post-link' : 'post-content-link'" th:href=" @{/post/{id}(id=${post.id})}">
                             <img class="post-image" th:src=" @{'/images/' + ${post.imagePath}}" alt="post photo">
                         </a>
                         <p th:text="${post.content}">Blog post content...</p>

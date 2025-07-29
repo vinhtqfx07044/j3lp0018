@@ -3,7 +3,7 @@
 <body>
 <div class="side-banner" th:fragment="side-banner">
     <div class="side-container">
-        <div class="banner-title"><b>Share this page</b></div>
+        <div class="banner-title">Share this page</div>
         <ul th:if="${socials != null and not #lists.isEmpty(socials)}">
             <li th:each="social : ${socials}">
                 <a href="#">
