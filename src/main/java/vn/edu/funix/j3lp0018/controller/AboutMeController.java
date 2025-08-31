@@ -19,6 +19,6 @@ public class AboutMeController {
         model.addAttribute("aboutMe", blogService.getAboutMe());
         model.addAttribute("socials", blogService.getSocials());
         model.addAttribute("viewCounter", viewCounterService.getFormattedViewsArray());
-        return "about-me"; // Returns templates/about-me.html
+        return "about-me";
     }
 }
