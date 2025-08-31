@@ -14,19 +14,19 @@
     --green-bg: #dff0d8;
     --green-light: #d6e9c6;
     --red-bg: #FFD2D2;
-    
+
     /* Typography */
     --font-primary: 'Calibri', sans-serif;
     --font-title: 'Great Vibes', cursive;
     --font-mono: 'Courier New', monospace;
-    
+
     /* Spacing System */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-4: 1rem;
     --space-6: 1.5rem;
     --space-8: 2rem;
-    
+
     /* Border Radius System */
     --radius-sm: 6px;
     --radius-md: 10px;
@@ -238,7 +238,7 @@ ul {
     font-size: 14px;
 }
 
-.grid-4 > span:last-child {
+.grid-4>span:last-child {
     text-align: left;
 }
 

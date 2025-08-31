@@ -8,7 +8,7 @@ total_views;
 -- Create the post table
 CREATE TABLE
     post (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         title VARCHAR(255),
         type VARCHAR(50),
         content VARCHAR(2000),
@@ -30,7 +30,7 @@ CREATE TABLE
 -- Create the social table
 CREATE TABLE
     social (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         name VARCHAR(50),
         icon VARCHAR(255)
     );
@@ -38,7 +38,7 @@ CREATE TABLE
 -- Create the contact_message table
 CREATE TABLE
     contact_message (
-        id INT AUTO_INCREMENT PRIMARY KEY,
+        id SERIAL PRIMARY KEY,
         name VARCHAR(100),
         email VARCHAR(100),
         message VARCHAR(1000)
