@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <body>
-<header th:fragment="header(activePage)">
-    <h1>My Fashion Blog</h1>
-    <h2>Welcome to this website</h2>
-    <nav>
-        <ul class="nav">
-            <li><a th:href=" @{/home}" th:class="${activePage == 'blog'} ? 'active' : ''">My Fashion Blog</a></li>
-            <li><a th:href=" @{/about-me}" th:class="${activePage == 'aboutMe'} ? 'active' : ''">About Me</a></li>
-            <li><a th:href=" @{/contact}" th:class="${activePage == 'contact'} ? 'active' : ''">Contact</a></li>
-        </ul>
-    </nav>
-</header>
+    <header th:fragment="header(activePage)">
+        <h1>My Fashion Blog</h1>
+        <h2>Welcome to this website</h2>
+        <nav>
+            <ul class="nav">
+                <li><a th:href=" @{/home}" th:class="${activePage == 'blog'} ? 'active' : ''">My Fashion Blog</a></li>
+                <li><a th:href=" @{/about-me}" th:class="${activePage == 'aboutMe'} ? 'active' : ''">About Me</a></li>
+                <li><a th:href=" @{/contact}" th:class="${activePage == 'contact'} ? 'active' : ''">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 </body>
+
 </html>

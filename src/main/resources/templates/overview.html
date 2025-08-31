@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Overview - My Blog</title>
     <link rel="stylesheet" th:href=" @{/css/style.css}">
 </head>
+
 <body>
     <div th:replace="~{fragments/header :: header(activePage='blog')}"></div>
 
@@ -24,11 +26,11 @@
                     <div th:each="post : ${group.value}" class="overview-item overview-base flex-between">
                         <a th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post Title</a>
                         <div class="overview-item-likes">
-                            <img th:src=" @{/images/like.png}" alt="Likes"/>
+                            <img th:src=" @{/images/like.png}" alt="Likes" />
                             <span th:text="${post.numLikes}">0</span>
                         </div>
                         <div class="overview-item-comments">
-                            <img th:src=" @{/images/comment.png}" alt="Comments"/>
+                            <img th:src=" @{/images/comment.png}" alt="Comments" />
                             <span th:text="${post.numComments}">0</span>
                         </div>
                         <span th:text="${#temporals.format(post.createdAt, 'dd-MM-yyyy')}">17-08-2014</span>
@@ -41,4 +43,5 @@
 
     <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
+
 </html>

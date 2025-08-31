@@ -3,9 +3,12 @@ package vn.edu.funix.j3lp0018.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
- @Data @Entity @Table(name = "contact_message")
+@Data
+@Entity
+@Table(name = "contact_message")
 public class ContactMessage {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String name;

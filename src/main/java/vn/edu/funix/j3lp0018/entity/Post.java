@@ -4,10 +4,12 @@ import jakarta.persistence.*;
 import lombok.Data;
 import java.time.LocalDate;
 
- @Data // Lombok's annotation to generate getters, setters, toString, etc.
- @Entity @Table(name = "post")
+@Data
+@Entity
+@Table(name = "post")
 public class Post {
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     private String title;
@@ -16,13 +18,12 @@ public class Post {
     @Column(name = "image_path")
     private String imagePath;
 
-    @Column(length = 2000) // Define a larger length for content
+    @Column(length = 2000)
     private String content;
 
     @Column(name = "created_at")
     private LocalDate createdAt;
 
-    // Based on the overview screenshot, we also have likes and comments
     @Column(name = "num_likes")
     private int numLikes;
 

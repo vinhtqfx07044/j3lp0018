@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <body>
-<div class="side-banner" th:fragment="side-banner">
-    <div class="side-container">
-        <div class="banner-title">Share this page</div>
-        <ul th:if="${socials != null and not #lists.isEmpty(socials)}">
-            <li th:each="social : ${socials}">
-                <a href="#">
-                    <img th:src=" @{'/images/' + ${social.icon}}" th:alt="${social.name}">
-                    <span th:text="'Share on ' + ${social.name}">Share on Facebook</span>
-                </a>
-            </li>
-        </ul>
+    <div class="side-banner" th:fragment="side-banner">
+        <div class="side-container">
+            <div class="banner-title">Share this page</div>
+            <ul th:if="${socials != null and not #lists.isEmpty(socials)}">
+                <li th:each="social : ${socials}">
+                    <a href="#">
+                        <img th:src=" @{'/images/' + ${social.icon}}" th:alt="${social.name}">
+                        <span th:text="'Share on ' + ${social.name}">Share on Facebook</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 </body>
+
 </html>

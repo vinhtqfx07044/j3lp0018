@@ -6,7 +6,8 @@ import org.springframework.transaction.annotation.Transactional;
 import vn.edu.funix.j3lp0018.entity.TotalViews;
 import vn.edu.funix.j3lp0018.repository.TotalViewsRepository;
 
- @Service @RequiredArgsConstructor
+@Service
+@RequiredArgsConstructor
 public class ViewCounterService {
 
     private final TotalViewsRepository totalViewsRepository;
@@ -17,5 +18,17 @@ public class ViewCounterService {
         return totalViewsRepository.findById(1)
                 .map(TotalViews::getViewCount)
                 .orElse(0); // Return 0 if somehow the record is missing
+    }
+
+    public int getCurrentViews() {
+        return totalViewsRepository.findById(1)
+                .map(TotalViews::getViewCount)
+                .orElse(0);
+    }
+
+    public String[] getFormattedViewsArray() {
+        int currentViews = getCurrentViews();
+        String formattedCount = String.format("%06d", currentViews);
+        return formattedCount.split("");
     }
 }

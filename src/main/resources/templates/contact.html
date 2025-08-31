@@ -1,42 +1,45 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <title>Contact Me</title>
     <link rel="stylesheet" th:href=" @{/css/style.css}">
     <script th:src="@{/js/contact.js}"></script>
 </head>
+
 <body>
-<div th:replace="~{fragments/header :: header(activePage='contact')}"></div>
+    <div th:replace="~{fragments/header :: header(activePage='contact')}"></div>
 
-<div class="page-content">
-    <div class="container">
-        <div class="blog-title">Contact me</div>
-        <p class="send-message-title">Send your message</p>
-        <hr class="contact-separator"/>
-        <!-- Success Message -->
-        <div th:if="${successMessage}" class="alert-success" th:text="${successMessage}">
-            Thank you for your message.
+    <div class="page-content">
+        <div class="container">
+            <div class="blog-title">Contact me</div>
+            <p class="send-message-title">Send your message</p>
+            <hr class="contact-separator" />
+            <!-- Success Message -->
+            <div th:if="${successMessage}" class="alert-success" th:text="${successMessage}">
+                Thank you for your message.
+            </div>
+            <p>Write your message here. Fill out the form:</p>
+            <form th:action=" @{/contact}" th:object="${contactMessage}" method="post">
+                <div class="input-wrapper">
+                    <input type="text" placeholder="Write your name here" th:field="*{name}" required>
+                </div>
+                <div class="input-wrapper">
+                    <input type="email" placeholder="Write your email here" th:field="*{email}" required>
+                </div>
+                <div>
+                    <textarea placeholder="Write your message here" th:field="*{message}" required></textarea>
+                </div>
+                <div class="send-button-wrapper">
+                    <button type="submit" class="send-button">Send - Click here</button>
+                </div>
+            </form>
         </div>
-        <p>Write your message here. Fill out the form:</p>
-        <form th:action=" @{/contact}" th:object="${contactDto}" method="post">
-            <div class="input-wrapper">
-                <input type="text" placeholder="Write your name here" th:field="*{name}" required>
-            </div>
-            <div class="input-wrapper">
-                <input type="email" placeholder="Write your email here" th:field="*{email}" required>
-            </div>
-            <div>
-                <textarea placeholder="Write your message here" th:field="*{message}" required></textarea>
-            </div>
-            <div class="send-button-wrapper">
-                <button type="submit" class="send-button">Send - Click here</button>
-            </div>
-        </form>
+        <div th:replace="~{fragments/side-banner :: side-banner}"></div>
     </div>
-    <div th:replace="~{fragments/side-banner :: side-banner}"></div>
-</div>
 
-<div th:replace="~{fragments/footer :: footer}"></div>
+    <div th:replace="~{fragments/footer :: footer}"></div>
 </body>
+
 </html>
