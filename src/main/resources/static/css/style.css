@@ -116,6 +116,7 @@ ul {
 .blog-title {
     font-size: xx-large;
     font-family: var(--font-title);
+    font-style: bold;
     margin: var(--space-4) 0;
 }
 
@@ -133,7 +134,7 @@ ul {
 .side-container {
     padding: var(--space-2) var(--space-4);
     border-radius: var(--radius-md);
-    box-shadow: 0 0 10px var(--dark);
+    box-shadow: 0 0 5px var(--dark);
 }
 
 .side-container a {
@@ -290,7 +291,7 @@ ul {
 }
 
 .overview-container {
-    margin-top: var(--space-8);
+    margin-top: var(--space-4);
 }
 
 
@@ -450,7 +451,7 @@ footer {
 
 .about-me-text-section p {
     margin-bottom: var(--space-4);
-    line-height: 1.6;
+    line-height: 1.4;
 }
 
 /* Error Pages */
