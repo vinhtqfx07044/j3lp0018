@@ -22,17 +22,15 @@
             </div>
             <p>Write your message here. Fill out the form:</p>
             <form th:action=" @{/contact}" th:object="${contactMessage}" method="post">
-                <div class="input-wrapper">
-                    <input type="text" placeholder="Write your name here" th:field="*{name}" required>
-                </div>
-                <div class="input-wrapper">
-                    <input type="email" placeholder="Write your email here" th:field="*{email}" required>
+                <div class="form-row">
+                    <input class="form-input" type="text" placeholder="Write your name here" th:field="*{name}" required>
+                    <input class="form-input" type="email" placeholder="Write your email here" th:field="*{email}" required>
                 </div>
                 <div>
-                    <textarea placeholder="Write your message here" th:field="*{message}" required></textarea>
+                    <textarea class="form-input form-input--textarea" placeholder="Write your message here" th:field="*{message}" required></textarea>
                 </div>
-                <div class="send-button-wrapper">
-                    <button type="submit" class="send-button">Send - Click here</button>
+                <div class="btn-wrapper">
+                    <button type="submit" class="btn">Send - Click here</button>
                 </div>
             </form>
         </div>

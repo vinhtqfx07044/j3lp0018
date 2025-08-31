@@ -5,7 +5,7 @@
     <footer th:fragment="footer">
         <hr>
         <div class="footer-container">
-            <div class="footer-page-credit"><a href="#">Created with SimpleSite</a></div>
+            <div class="footer-page-credit"><a class="link" href="#">Created with SimpleSite</a></div>
             <!-- The viewCounter is an array of characters from the database -->
             <div class="footer-page-counter" th:if="${viewCounter != null}">
                 <span th:each="digit : ${viewCounter}" class="footer-page-counter-item" th:text="${digit}"></span>

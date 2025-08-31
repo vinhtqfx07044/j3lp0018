@@ -16,15 +16,15 @@
             <div th:if="${groupedPosts != null and not #maps.isEmpty(groupedPosts)}" class="overview-container">
                 <!-- Outer loop for each month-year group -->
                 <div th:each="group : ${groupedPosts}">
-                    <div class="overview-group overview-base flex-between">
+                    <div class="grid-4 grid-4--header">
                         <span th:text="${group.key}">AUGUST 2014</span>
                         <span></span>
                         <span></span>
                         <span>Date</span>
                     </div>
                     <!-- Inner loop for each post within the group -->
-                    <div th:each="post : ${group.value}" class="overview-item overview-base flex-between">
-                        <a th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post Title</a>
+                    <div th:each="post : ${group.value}" class="overview-item grid-4 grid-4--item">
+                        <a class="link" th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post Title</a>
                         <div class="overview-item-likes">
                             <img th:src=" @{/images/like.png}" alt="Likes" />
                             <span th:text="${post.numLikes}">0</span>

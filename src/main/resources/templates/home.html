@@ -18,7 +18,7 @@
                 <img th:src=" @{'/images/' + ${post.type} + '.png'}" th:alt="${post.type} + ' icon'">
                 <div class="post">
                     <div class="post-title">
-                        <a class="post-title-link" th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post
+                        <a class="link link--large" th:href=" @{/post/{id}(id=${post.id})}" th:text="${post.title}">Post
                             Title</a>
                         <div class="post-date" th:text="${#temporals.format(post.createdAt, 'dd-MM-yyyy')}">17-08-2014
                         </div>
