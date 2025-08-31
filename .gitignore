@@ -39,3 +39,6 @@ config.json
 repo2txt.py
 app.log
 .env
+
+### MCP Configuration with secrets ###
+.mcp.json
