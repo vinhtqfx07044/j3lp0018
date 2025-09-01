@@ -1,19 +1,13 @@
-package vn.edu.funix.j3lp0018.entity;
+package vn.edu.funix.j3lp0018.dto;
 
-import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-@Entity
-@Table(name = "contact_message")
-public class ContactMessage {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
-
+public class ContactMessageRequest {
+    
     @NotBlank(message = "Name cannot be empty.")
     @Size(max = 100, message = "Name must not exceed 100 characters.")
     private String name;
@@ -25,6 +19,5 @@ public class ContactMessage {
 
     @NotBlank(message = "Message cannot be empty.")
     @Size(max = 1000, message = "Message must not exceed 1000 characters.")
-    @Column(length = 1000)
     private String message;
 }

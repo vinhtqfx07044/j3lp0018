@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
 
-/* CSS Custom Properties */
+/* ============================================
+   CSS CUSTOM PROPERTIES (VARIABLES)
+   ============================================ */
 :root {
     /* Colors */
     --red: #CD0D18;
@@ -34,7 +36,9 @@
     --radius-xl: 18px;
 }
 
-/* Global Styles */
+/* ============================================
+   BASE & GLOBAL STYLES
+   ============================================ */
 html {
     background-color: var(--white);
     background-image: url('../images/background.jpg');
@@ -49,6 +53,7 @@ body {
     box-shadow: 0 0 17px var(--dark);
 }
 
+/* Typography */
 h1 {
     font-size: 47px;
     margin: 0 0 0 var(--space-2);
@@ -63,7 +68,15 @@ h2 {
     color: var(--red);
 }
 
-/* Header Styles */
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* ============================================
+   HEADER & NAVIGATION
+   ============================================ */
 header {
     padding: 15px 20px 0 20px;
     background-color: var(--white);
@@ -80,16 +93,12 @@ header a {
     margin-right: var(--space-4);
 }
 
+/* Navigation Styles */
 .nav {
     list-style: none;
     padding: 0.2rem var(--space-6);
     background-color: var(--red);
     margin: var(--space-8) -20px 0 -20px;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
 }
 
 .nav li {
@@ -101,7 +110,9 @@ ul {
     font-weight: bold;
 }
 
-/* Page Content Styles */
+/* ============================================
+   LAYOUT & PAGE STRUCTURE
+   ============================================ */
 .page-content {
     padding: var(--space-4);
     display: grid;
@@ -113,14 +124,9 @@ ul {
     margin-right: var(--space-8);
 }
 
-.blog-title {
-    font-size: xx-large;
-    font-family: var(--font-title);
-    font-style: bold;
-    margin: var(--space-4) 0;
-}
-
-/* Side Banner Styles */
+/* ============================================
+   SIDEBAR COMPONENTS
+   ============================================ */
 .side-banner {
     padding: var(--space-2);
 }
@@ -153,7 +159,17 @@ ul {
     margin-right: 8px;
 }
 
-/* Post Styles */
+/* ============================================
+   BLOG & POST STYLES
+   ============================================ */
+.blog-title {
+    font-size: xx-large;
+    font-family: var(--font-title);
+    font-style: bold;
+    margin: var(--space-4) 0;
+}
+
+/* Post Layout */
 .row {
     border-bottom: 3px dotted rgba(0, 0, 0, 0.2);
     display: flex;
@@ -161,10 +177,9 @@ ul {
     padding-bottom: var(--space-4);
 }
 
-.row>img {
+.row > img {
     padding-top: 15px;
     height: 32px;
-    /* Set a fixed height for the icon */
     width: 32px;
 }
 
@@ -180,21 +195,13 @@ ul {
     align-items: baseline;
 }
 
-.link {
-    color: var(--black);
-    text-decoration: underline;
-}
-
-.link--large {
-    font-size: larger;
-}
-
 .post-date {
     font-size: 14px;
     font-style: italic;
     white-space: nowrap;
 }
 
+/* Post Content & Images */
 .post-content-link {
     float: left;
     width: 50%;
@@ -213,7 +220,9 @@ ul {
     border-radius: var(--radius-lg);
 }
 
-/* Overview Styles */
+/* ============================================
+   OVERVIEW & GRID SYSTEM
+   ============================================ */
 .overview {
     display: block;
     text-align: center;
@@ -221,8 +230,13 @@ ul {
     margin-top: var(--space-6);
 }
 
-/* Utility Classes */
-.grid-4-col {
+.overview-container {
+    margin-top: var(--space-4);
+}
+
+/* Grid Components */
+.grid-4-col,
+.grid-4 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     align-items: center;
@@ -239,7 +253,7 @@ ul {
     font-size: 14px;
 }
 
-.grid-4>span:last-child {
+.grid-4 > span:last-child {
     text-align: left;
 }
 
@@ -252,14 +266,6 @@ ul {
     padding: 0.75rem var(--space-2);
 }
 
-/* Single Grid System */
-.grid-4 {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    align-items: center;
-    gap: 10px;
-}
-
 .grid-4--header span:first-child {
     text-align: left;
 }
@@ -268,12 +274,12 @@ ul {
     text-align: right;
 }
 
+/* Overview Items */
 .overview-item {
     border-bottom: 1px dotted var(--light);
 }
 
-
-.overview-item>span:last-child {
+.overview-item > span:last-child {
     text-align: right;
 }
 
@@ -290,12 +296,9 @@ ul {
     height: 16px;
 }
 
-.overview-container {
-    margin-top: var(--space-4);
-}
-
-
-/* Contact form */
+/* ============================================
+   FORMS & BUTTONS
+   ============================================ */
 .send-message-title {
     font-size: 1.3em;
     margin-bottom: var(--space-4);
@@ -307,15 +310,7 @@ ul {
     margin: var(--space-6) 0 var(--space-6) 0;
 }
 
-.alert-success {
-    background-color: var(--green-bg);
-    border: 1px solid var(--green-light);
-    border-radius: var(--radius-sm);
-    color: var(--green);
-    margin-bottom: 22px;
-    padding: 10px 15px;
-}
-
+/* Form Layout */
 .form-row {
     display: flex;
     gap: 2%;
@@ -325,7 +320,7 @@ ul {
     flex: 1;
 }
 
-/* Form Styles */
+/* Form Inputs */
 .form-input {
     box-sizing: border-box;
     width: 100%;
@@ -342,6 +337,14 @@ ul {
     resize: vertical;
 }
 
+.form-input:disabled,
+.form-input.disable {
+    background-color: var(--light-gray);
+    color: var(--gray);
+    cursor: not-allowed;
+}
+
+/* Buttons */
 .btn-wrapper {
     text-align: right;
     padding-top: 10px;
@@ -363,15 +366,34 @@ ul {
     background-color: #DE6269;
 }
 
-.form-input:disabled,
-.form-input.disable {
-    background-color: var(--light-gray);
-    color: var(--gray);
-    cursor: not-allowed;
+/* ============================================
+   ALERTS & NOTIFICATIONS
+   ============================================ */
+.alert-success {
+    background-color: var(--green-bg);
+    border: 1px solid var(--green-light);
+    border-radius: var(--radius-sm);
+    color: var(--green);
+    margin-bottom: 22px;
+    padding: 10px 15px;
 }
 
+.error-message {
+    color: var(--red);
+    background-color: var(--red-bg);
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid var(--red);
+}
 
-/* Footer Styles */
+.navigate-message {
+    margin-top: 20px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
 footer {
     padding: var(--space-4);
 }
@@ -387,8 +409,7 @@ footer {
     margin: 0;
 }
 
-
-/* Page Counter Styles - Digital Display Effect */
+/* Page Counter - Digital Display Effect */
 .footer-page-counter {
     display: flex;
     gap: 2px;
@@ -412,7 +433,6 @@ footer {
     text-align: center;
 }
 
-/* Digital display horizontal line effect */
 .footer-page-counter-item::after {
     content: '';
     position: absolute;
@@ -425,7 +445,9 @@ footer {
     opacity: 0.7;
 }
 
-/* About Me Styles */
+/* ============================================
+   ABOUT ME PAGE
+   ============================================ */
 .about-me-content {
     display: flex;
     gap: var(--space-8);
@@ -454,16 +476,14 @@ footer {
     line-height: 1.4;
 }
 
-/* Error Pages */
-.error-message {
-    color: var(--red);
-    background-color: var(--red-bg);
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid var(--red);
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+.link {
+    color: var(--black);
+    text-decoration: underline;
 }
 
-.navigate-message {
-    margin-top: 20px;
+.link--large {
+    font-size: larger;
 }

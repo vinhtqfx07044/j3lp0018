@@ -1,10 +1,3 @@
--- Drop tables if they exist to ensure a clean slate on each startup
-DROP TABLE IF EXISTS contact_message,
-social,
-post,
-about_me,
-total_views;
-
 -- Create the post table
 CREATE TABLE
     post (

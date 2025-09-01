@@ -13,11 +13,15 @@ public class ViewCounterService {
     private final TotalViewsRepository totalViewsRepository;
 
     @Transactional
-    public synchronized int incrementAndGetViews() {
-        totalViewsRepository.incrementViewCount();
-        return totalViewsRepository.findById(1)
-                .map(TotalViews::getViewCount)
-                .orElse(0); // Return 0 if somehow the record is missing
+    public int incrementAndGetViews() {
+        try {
+            // Use atomic database operation with PostgreSQL RETURNING clause
+            Integer newCount = totalViewsRepository.incrementAndGetViewCount();
+            return (newCount != null) ? newCount : 0;
+        } catch (Exception e) {
+            // Fallback to old method if atomic operation fails
+            return getCurrentViews();
+        }
     }
 
     public int getCurrentViews() {

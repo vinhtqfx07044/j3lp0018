@@ -22,10 +22,6 @@ public class SessionService {
             try {
                 int currentViews = viewCounterService.incrementAndGetViews();
                 log.info("Total views are now: {}", currentViews);
-
-                // Mark session as processed
-                session.setAttribute("viewCountProcessed", true);
-
             } catch (Exception e) {
                 log.error("Could not increment view count for new session.", e);
             }

@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import vn.edu.funix.j3lp0018.dto.PostOverviewDTO;
 import vn.edu.funix.j3lp0018.entity.AboutMe;
 import vn.edu.funix.j3lp0018.entity.Post;
 import vn.edu.funix.j3lp0018.entity.Social;
@@ -38,17 +39,28 @@ public class BlogService {
                 .orElseThrow(() -> new ResourceNotFoundException("Post not found with id: " + id));
     }
 
-    public Map<String, List<Post>> getGroupedPosts() {
+    public Map<String, List<PostOverviewDTO>> getGroupedPosts() {
         List<Post> posts = postRepository.findAll(Sort.by(Sort.Direction.DESC, "createdAt"));
 
-        // Use Java Stream API to group posts by "MONTH YYYY"
+        // Use Java Stream API to convert to DTOs and group by "MONTH YYYY"
         return posts.stream()
+                .map(this::convertToPostOverviewDTO) // Convert to DTO first
                 .collect(Collectors.groupingBy(
-                        post -> post.getCreatedAt().getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH)
+                        dto -> dto.getCreatedAt().getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH)
                                 .toUpperCase()
-                                + " " + post.getCreatedAt().getYear(),
+                                + " " + dto.getCreatedAt().getYear(),
                         LinkedHashMap::new, // Keep insertion order
                         Collectors.toList()));
+    }
+
+    private PostOverviewDTO convertToPostOverviewDTO(Post post) {
+        PostOverviewDTO dto = new PostOverviewDTO();
+        dto.setId(post.getId());
+        dto.setTitle(post.getTitle());
+        dto.setCreatedAt(post.getCreatedAt());
+        dto.setNumLikes(post.getNumLikes());
+        dto.setNumComments(post.getNumComments());
+        return dto;
     }
 
     public AboutMe getAboutMe() {
