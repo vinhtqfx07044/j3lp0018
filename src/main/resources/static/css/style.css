@@ -177,7 +177,7 @@ header a {
     padding-bottom: var(--space-4);
 }
 
-.row > img {
+.row>img {
     padding-top: 15px;
     height: 32px;
     width: 32px;
@@ -253,7 +253,7 @@ header a {
     font-size: 14px;
 }
 
-.grid-4 > span:last-child {
+.grid-4>span:last-child {
     text-align: left;
 }
 
@@ -279,7 +279,7 @@ header a {
     border-bottom: 1px dotted var(--light);
 }
 
-.overview-item > span:last-child {
+.overview-item>span:last-child {
     text-align: right;
 }
 

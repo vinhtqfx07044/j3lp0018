@@ -16,7 +16,6 @@ public class BlogController {
     private final BlogService blogService;
     private final SessionService sessionService;
 
-
     @GetMapping({ "/", "/home" })
     public String showHomePage(HttpServletRequest request, Model model) {
         sessionService.handleNewSession(request);

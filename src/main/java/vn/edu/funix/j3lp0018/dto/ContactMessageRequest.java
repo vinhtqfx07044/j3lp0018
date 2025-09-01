@@ -7,7 +7,7 @@ import lombok.Data;
 
 @Data
 public class ContactMessageRequest {
-    
+
     @NotBlank(message = "Name cannot be empty.")
     @Size(max = 100, message = "Name must not exceed 100 characters.")
     private String name;

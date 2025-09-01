@@ -1,5 +1,5 @@
 // Use DOMContentLoaded for better performance (doesn't wait for images)
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const successAlert = document.querySelector('.alert-success');
     const form = document.querySelector('form');
 
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             elements[i].disabled = true;
             elements[i].classList.add('disable');
         }
-        const button = form.querySelector('.btn'); // Fixed selector: .btn instead of .send-button
+        const button = form.querySelector('.btn');
         if (button) {
             button.innerHTML = "✓ Sent";
         }
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Logic 2: Prevent duplicate submissions WHEN user clicks send button
     if (form && !successAlert) { // Only add listener if form hasn't been sent yet
-        form.addEventListener('submit', function() {
+        form.addEventListener('submit', function () {
             const button = form.querySelector('.btn');
             if (button) {
                 button.disabled = true;
