@@ -31,13 +31,13 @@ h2 {
 
 ul {
     list-style: none;
-    padding:0;
+    padding: 0;
 }
 
 header {
     padding: 15px 20px 0 20px;
     background-color: #fff;
-    margin:0;
+    margin: 0;
 }
 
 header li {
@@ -101,7 +101,6 @@ header a {
     margin-bottom: 0.5rem;
 }
 
-
 .side-container img {
     margin-right: 8px;
 }
@@ -113,7 +112,7 @@ header a {
 }
 
 .row {
-    border-bottom: 3px dotted rgba(0,0,0,.2);
+    border-bottom: 3px dotted rgba(0, 0, 0, .2);
     display: flex;
     margin: 1rem 0;
     padding-bottom: 1rem;
@@ -153,7 +152,7 @@ header a {
     display: block;
     float: none;
     width: 100%;
-    margin:0;
+    margin: 0;
 }
 
 .post-image {
@@ -239,7 +238,7 @@ header a {
 
 .contact-separator {
     border: 0;
-    border-top: 3px dotted rgba(0,0,0,.2);
+    border-top: 3px dotted rgba(0, 0, 0, .2);
     margin: 1.5rem 0 1.5rem 0;
 }
 
@@ -283,7 +282,9 @@ header a {
     cursor: not-allowed;
 }
 
-.form-input::placeholder { color: #999; }
+.form-input::placeholder {
+    color: #999;
+}
 
 .btn-wrapper {
     text-align: right;
@@ -312,7 +313,7 @@ header a {
     color: #468847;
     margin-bottom: 22px;
     padding: 8px 35px 8px 14px;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 }
 
 .error-message {
@@ -322,9 +323,8 @@ header a {
     border-radius: 6px;
     margin-bottom: 22px;
     padding: 8px 35px 8px 14px;
-    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    text-shadow: 0 1px 0 rgba(255, 255, 255, .5);
 }
-
 
 .navigate-message {
     margin-top: 20px;
@@ -332,7 +332,7 @@ header a {
 
 footer {
     padding: 1rem;
-    margin:0;
+    margin: 0;
     height: auto;
     min-height: 60px;
     display: flex;
@@ -346,7 +346,7 @@ footer hr {
     flex-shrink: 0;
     display: block !important;
     border: none !important;
-    border-top: 3px dotted rgba(0,0,0,.2) !important;
+    border-top: 3px dotted rgba(0, 0, 0, .2) !important;
     height: 3px !important;
     width: 100% !important;
     visibility: visible !important;
@@ -367,24 +367,23 @@ footer hr {
 }
 
 .footer-container a:hover {
-    color: rgba(0,0,0,.8);
+    color: rgba(0, 0, 0, .8);
     text-decoration: underline;
 }
 
 .footer-page-credit {
     max-width: 75%;
     font-size: 16px;
-    margin:0;
+    margin: 0;
     line-height: 1;
 }
 
 .footer-page-counter {
-    margin:0;
+    margin: 0;
     display: flex;
     gap: 2px;
     align-items: center;
 }
-
 
 .footer-page-counter-item {
     border: solid 0 #000;
@@ -409,7 +408,7 @@ footer hr {
     top: 52%;
     left: 0;
     margin-top: -1px;
-    background: rgba(0,0,0,.25);
+    background: rgba(0, 0, 0, .25);
     width: 100%;
 }
 
