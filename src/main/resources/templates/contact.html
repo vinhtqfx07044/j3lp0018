@@ -31,13 +31,13 @@
                 </div>
                 <div class="form-row">
                     <input class="form-input" type="text" placeholder="Write your name here" th:field="*{name}"
-                        required>
+                        required maxlength="100">
                     <input class="form-input" type="email" placeholder="Write your email here" th:field="*{email}"
-                        required>
+                        required maxlength="100">
                 </div>
                 <div>
                     <textarea class="form-input form-input--textarea" placeholder="Write your message here"
-                        th:field="*{message}" required></textarea>
+                        th:field="*{message}" required maxlength="1000"></textarea>
                 </div>
                 <div class="btn-wrapper">
                     <button type="submit" class="btn">Send - Click here</button>
