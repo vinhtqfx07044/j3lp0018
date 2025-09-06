@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Source+Sans+Pro:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Source+Sans+Pro');
 
 
 html {
@@ -331,55 +331,28 @@ header a {
 }
 
 footer {
-    padding: 1rem;
+    padding: 0 1rem;
     margin: 0;
-    height: auto;
-    min-height: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
 }
 
 footer hr {
-    margin-bottom: 0 !important;
-    margin-top: 0 !important;
-    flex-shrink: 0;
-    display: block !important;
-    border: none !important;
-    border-top: 3px dotted rgba(0, 0, 0, .2) !important;
-    height: 3px !important;
-    width: 100% !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+    margin: 0;
 }
 
 .footer-container {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    flex-grow: 1;
-    margin-top: 15px;
+    padding: 3rem 1rem;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
-.footer-container a {
+.footer-credit a {
     color: #000;
     text-decoration: underline;
 }
 
-.footer-container a:hover {
-    color: rgba(0, 0, 0, .8);
-    text-decoration: underline;
-}
-
-.footer-page-credit {
-    max-width: 75%;
-    font-size: 16px;
-    margin: 0;
-    line-height: 1;
-}
-
 .footer-page-counter {
-    margin: 0;
     display: flex;
     gap: 2px;
     align-items: center;
@@ -388,9 +361,11 @@ footer hr {
 .footer-page-counter-item {
     border: solid 0 #000;
     background: #fff;
-    font: 14.4px/14.4px Arial, Helvetica, sans-serif;
+    font-size: 14.4px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 14.4px;
     padding: 2px 2px 1px;
-    margin: 0 2px 0 0;
+    margin: 3px 2px 0 0;
     border-radius: 4px;
     box-shadow: 0 1px 2px #595959;
     text-align: center;
@@ -408,7 +383,7 @@ footer hr {
     top: 52%;
     left: 0;
     margin-top: -1px;
-    background: rgba(0, 0, 0, .25);
+    background: rgba(0, 0, 0, 0.25);
     width: 100%;
 }
 
