@@ -171,15 +171,11 @@ header a {
     margin-top: 1rem;
 }
 
-.grid-4-col,
 .grid-4 {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     gap: 10px;
-}
-
-.grid-4 {
     width: 100%;
     color: #000;
 }
@@ -189,8 +185,8 @@ header a {
     font-size: 14px;
 }
 
-.grid-4>span:last-child {
-    text-align: left;
+.grid-4 > span:last-child {
+    text-align: right;
 }
 
 .grid-4--header {
@@ -389,35 +385,29 @@ footer hr {
 
 .about-me-content {
     margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: start;
 }
 
 .about-me-image-section {
-    float: left;
-    width: 50%;
-    margin: 3px 20px 8px 0;
+    grid-column: 1;
 }
 
 .about-me-image {
     width: 100%;
     height: auto;
     border-radius: 10px;
-    object-fit: cover;
-    display: block;
-    overflow: hidden;
-    line-height: 0;
 }
 
 .about-me-text-section {
-    overflow: hidden;
+    grid-column: 2;
 }
 
 .about-me-text-section p {
     margin-bottom: 1rem;
     line-height: 1.6;
-}
-
-.about-me-text-section p:last-child {
-    margin-bottom: 0;
 }
 
 .link {
