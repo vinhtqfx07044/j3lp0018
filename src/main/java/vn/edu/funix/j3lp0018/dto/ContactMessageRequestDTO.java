@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
-public class ContactMessageRequest {
+public class ContactMessageRequestDTO {
 
     @NotBlank(message = "Name cannot be empty.")
     @Size(max = 100, message = "Name must not exceed 100 characters.")

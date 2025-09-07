@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-import vn.edu.funix.j3lp0018.dto.ContactMessageRequest;
+import vn.edu.funix.j3lp0018.dto.ContactMessageRequestDTO;
 import vn.edu.funix.j3lp0018.service.ContactService;
 
 @Controller
@@ -20,13 +20,13 @@ public class ContactController {
 
     @GetMapping("/contact")
     public String showContactPage(Model model) {
-        model.addAttribute("contactMessage", new ContactMessageRequest());
+        model.addAttribute("contactMessage", new ContactMessageRequestDTO());
         return "contact";
     }
 
     @PostMapping("/contact")
     public String handleContactForm(
-            @Valid @ModelAttribute ContactMessageRequest contactMessage,
+            @Valid @ModelAttribute ContactMessageRequestDTO contactMessage,
             BindingResult bindingResult,
             RedirectAttributes redirectAttributes,
             Model model) {
